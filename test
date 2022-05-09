@@ -1,0 +1,67 @@
+steps to run the code:
+Cs Elog: https://pcata007.cern.ch/elog/Cs137/
+1.	Cesium data is available here: /afs/cern.ch/user/t/tilecali/w0/ntuples/cs
+2.	First look at the Cs Elog .In the Cs Elog search for the run number you will use and look up all the information including the dead/off modules for that run.
+(for example: January 11,2013
+For EBA:  
+10:37 Scan G2->G3 run 6339
+11:22 Scan G3->G1 run 6341
+12:13 Scan G1->G3 run 6344
+13:03 Scan G3->G2 run 6346
+13:47 Scan G2->G1 run 6348
+14:32 Scan G1->G2 run 6351 
+
+For EBC 
+10:38 Scan G1->G2 run 6338
+11:18 Scan G2->G3 run 6340
+11:59 Scan G3->G2 run 6343
+12:43 Scan G2->G1 run 6345
+13:26 Scan G1->G3 run 6347
+14:18 Scan G3->G1 run 6350
+
+3.	For each side of extended barrel (EBA and EBC),  cesium source travel through TileCal in two direction(up and down). Therefore,
+EBA (Direction1)
+Run 1			6351			G1->G2 
+Run2			6339			G2->G3
+Run3			6341			G3->G1
+Modules off: 40,58
+EBA (Direction2)
+Run 1			6348			G2->G1 
+Run2			6346			G3->G2
+Run3			6344			G1->G3
+Modules off: 39,57
+EBC (Direction1)
+Run 1			6338			G1->G2 
+Run2			6340			G2->G3
+Run3			6350			G3->G1
+Modules off: 40,58
+EBC (Direction2)
+Run 1			6345			G2->G1 
+Run2			6345			G3->G2
+Run3			6345			G1->G3
+Modules off: 39,57
+(there is no data for modules 40 and 58 for direction 1 and modules 39 and 57 for Direction 2 because we can not switch read-out while capsule moves behind LAr cryo support structures we are reading out only one module out of two while capsule moves through them. Therefore, we treat these modules off/dead for over code.
+
+
+4.	Once we have data with full information, copy tha EBA data in Aside folder and EBC data in Cside folder.
+5.	Run the code: ModuleLoop.C
+
+
+root [0] .L ModuleLoop.C+
+root [1] ModuleLoop()
+Which SIDE would you like?
+A
+Which DIRECTION would you like?
+1
+Which 3 RUNS would you like?
+6351
+6339
+6341
+run1 = cs06351  run2 = cs06339  run3 = cs06341
+Which MODULES are OFF? Type '0' to exit.
+40
+58
+0
+
+(same procedure for EBC (both direction).
+
