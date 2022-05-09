@@ -116,69 +116,8 @@ cout<<"run1 = "<<run1<<"\trun2 = "<<run2<<"\trun3 = "<<run3<<endl;
   }
 
 
-/*
-  for (int input=0;input<4;input++)
-  {
-    if (input==0) cin>>side;
-    if (input==1) cin>>ModuleNumber;
-    if (input==2){ cin>>run; run1 += run;}
-    if (input==3) cin>>outputfilename;
-  }
-*/
-//    cin>>side>>direction;
-/*
-  side = 'A';
-  direction = '1';
- 
-//Side A, Direction1 (2010 data) 
-
-  //run1 += 3162;
-  //run2 += 3164;
-  //run3 += 3175;
-
-//Side A, Direction 2 (2010 data)
-  //run1 += 3169;
-  //run2 += 3167;
-  //run3 += 3172;
 
 
-//Side C, Direction 1 (2010 data)
-  // run1 += 3176;
-  //run2 += 3163;
-  //run3 += 3173;
-
-//Side C, Direction 2 (2010 data)
-  // run1 += 3069;
-  // run2 += 3067;
-  //run3 += 3072;
-
-//Side C, Direction 1 (2011 data)
-  //run1 += 4294;
-  //run2 += 4296;
-  //run3 += 4307;
-
-//Side C, Direction 2 (2011 data)
-  //run1 += 4302;
-  //run2 += 4299;
-  //run3 += 4304;
-
-//Side A, Direction 2 (2011 data)
-  //run1 += 4301;
-  //run2 += 4298;
-  //run3 += 4303;
- 
-//Side A, Direction 1 (2011 data)
-  run1 += 4293;
-  run2 += 4295;
-  run3 += 4306;
-
-
-// ModulesOff[0] = 40;
- // ModulesOff[1] = 58;
-// ModulesOff[2] =57;
- // ModulesOff[3] = 57;
- // ModulesOff[4] = 63;
-*/
 cout<<"run1 = "<<run1<<"\trun2 = "<<run2<<"\trun3 = "<<run3<<endl;
 
  RunNo += side;
@@ -488,19 +427,7 @@ cout<<"run1 = "<<run1<<"\trun2 = "<<run2<<"\trun3 = "<<run3<<endl;
       J++;
 
    }// closes loop over j1
-/*
-cout<<"norm5Asigsum = "<<norm5Asigsum<<"  norm5Bsigsum = "<<norm5Bsigsum<<endl;
-cout<<"norm4Asigsum = "<<norm4Asigsum<<"  norm4Bsigsum = "<<norm4Bsigsum<<endl;
-cout<<"spec5Asigsum = "<<spec5Asigsum<<"  spec5Bsigsum = "<<spec5Bsigsum<<endl;
-cout<<"spec4Asigsum = "<<spec4Asigsum<<"  spec4Bsigsum = "<<spec4Bsigsum<<endl<<endl;
 
-cout<<"norm3sigsum = "<<norm3sigsum<<"  norm2sigsum = "<<norm2sigsum<<endl;
-cout<<"spec3sigsum = "<<spec3sigsum<<"  spec2sigsum = "<<spec2sigsum<<endl;
-
-cout<<"norm12sigsum = "<<norm12sigsum<<"  norm13sigsum = "<<norm13sigsum<<endl;
-
-cout<<"5A= "<<NonZeroSpec5A<<"   4A= "<<NonZeroSpec4A<<"   5B= "<<NonZeroSpec5B<<"   4B= "<<NonZeroSpec4B<<"   3= "<<NonZeroSpec3<<"   2= "<<NonZeroSpec2<<endl;
-*/
   
 // setting the normal averages
   if (NonZeroNorm5A!=0) Norm5Aavg = norm5Asigsum / NonZeroNorm5A; 
@@ -602,14 +529,7 @@ cout<<"5A= "<<NonZeroSpec5A<<"   4A= "<<NonZeroSpec4A<<"   5B= "<<NonZeroSpec5B<
     Yaxis_pmt12constant[m1] = AvgDirConstantMatrix[m1][4];
     Yaxis_pmt13constant[m1] = AvgDirConstantMatrix[m1][5];
 
-  // pmt5constant[m1]=1/(Yaxis_pmt5constant[m1]);
-  //   pmt4constant[m1]=1/(Yaxis_pmt4constant[m1]);
-  //   pmt3constant[m1]=1/(Yaxis_pmt3constant[m1]);
-  //   pmt2constant[m1]=1/(Yaxis_pmt2constant[m1]);
-  //   pmt12constant[m1]=1/(Yaxis_pmt12constant[m1]);
-  //   pmt13constant[m1]=1/(Yaxis_pmt13constant[m1]);
 
- 
 
 
     if (Yaxis_pmt5constant[m1]==0) pmt5constant[m1] = 0; 
@@ -963,14 +883,7 @@ TGraph *F1 = new TGraph(64,Xaxis,Yaxis_pmt5constant);
    d5->Draw("A*");
    d5->Write();
    
-// c0->SaveAs("PMT5_Oct9,2010_A1.pdf");
-// c1->SaveAs("PMT4_Oct9,2010_A1.pdf");
-// c2->SaveAs("PMT3_Oct9,2010_A1.pdf");
-// c3->SaveAs("PMT2_Oct9,2010_A1.pdf");
-// c4->SaveAs("PMT12_Sept2,2010_C2.pdf");
-// c5->SaveAs("PMT13_Sept2,2010_C2.pdf");
-// c6->SaveAs("Constants_Sept2,2010_C2.pdf");
-  
+
 
 
 
